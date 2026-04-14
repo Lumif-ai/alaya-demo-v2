@@ -1258,10 +1258,24 @@ function ContractAnalysis({ beat }: { beat: number }) {
         {/* RIGHT: Extracted requirements */}
         <div className="w-[420px] flex-shrink-0 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 220px)' }}>
           {beat === 4 && (
-            <div className="flex flex-col items-center justify-center h-64 gap-4">
-              <div className="w-full h-2 rounded-full overflow-hidden shimmer-bar" style={{ maxWidth: 280 }} />
-              <span className="text-[14px] text-[#6B7280]">{lang === 'es' ? 'Analizando contrato MSA y documento de fianzas...' : 'Analyzing MSA contract and surety bond document...'}</span>
-              <span className="text-[12px] text-[#9CA3AF]">{t('analyzing.sub', lang)}</span>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col items-center justify-center h-48 gap-4">
+                <div className="w-full h-2 rounded-full overflow-hidden shimmer-bar" style={{ maxWidth: 280 }} />
+                <span className="text-[14px] text-[#6B7280]">{lang === 'es' ? 'Analizando contrato MSA y documento de fianzas...' : 'Analyzing MSA contract and surety bond document...'}</span>
+                <span className="text-[12px] text-[#9CA3AF]">{t('analyzing.sub', lang)}</span>
+              </div>
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
+                className="lumif-card" style={{ border: '1px dashed #D1D5DB' }}>
+                <h4 className="text-[13px] font-semibold text-[#121212] mb-2 flex items-center gap-2">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B7280" strokeWidth="2" strokeLinecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  {lang === 'es' ? 'Subir Documentos Adicionales' : 'Upload Additional Documents'}
+                </h4>
+                <p className="text-[12px] text-[#6B7280] mb-3">{lang === 'es' ? 'Puede agregar contratos, polizas existentes u otros documentos para un analisis mas completo.' : 'You can add contracts, existing policies or other documents for a more complete analysis.'}</p>
+                <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg border-2 border-dashed border-[#D1D5DB] hover:border-[#E94D35] hover:bg-[rgba(233,77,53,0.03)] transition-colors cursor-pointer">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2" strokeLinecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <span className="text-[12px] font-medium text-[#9CA3AF]">{lang === 'es' ? 'Arrastra archivos o haz clic para seleccionar' : 'Drag files or click to browse'}</span>
+                </div>
+              </motion.div>
             </div>
           )}
 
