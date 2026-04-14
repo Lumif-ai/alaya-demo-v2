@@ -3098,6 +3098,19 @@ function ComparisonMatrixView({ expandedGroupIndex, beat }: { expandedGroupIndex
         </motion.div>
       )}
 
+      {/* Insurance insight card */}
+      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="lumif-card mt-4" style={{ borderLeft: '4px solid #E94D35', background: 'rgba(233,77,53,0.03)' }}>
+        <div className="flex items-center gap-2 mb-2">
+          {Icon.sparkle('#E94D35')}
+          <span className="text-[14px] font-semibold text-[#121212]">Mapfre Mexico</span>
+        </div>
+        <p className="text-[13px] text-[#374151]">
+          {lang === 'es'
+            ? 'Prima mas baja de las 4 cotizaciones (Mex$847,000 vs promedio Mex$941,500). Cobertura completa incluyendo Endoso 014 (Vibracion) disponible por prima adicional. Sin exclusiones criticas. Deducible de Todo Riesgo negociable a 8%. Zurich excluye vibracion — riesgo contractual critico para obra carretera.'
+            : 'Lowest premium of 4 quotes (Mex$847,000 vs average Mex$941,500). Full coverage including Endorsement 014 (Vibration) available for additional premium. No critical exclusions. All-Risk deductible negotiable to 8%. Zurich excludes vibration — critical contractual risk for highway project.'}
+        </p>
+      </motion.div>
+
       {/* Action buttons */}
       </>)}
     </div>
@@ -3139,7 +3152,7 @@ function ComparisonPdfPreview({ lang, carrierCols }: { lang: 'es' | 'en'; carrie
                     <th className="text-center py-1.5 px-2 font-semibold" style={{ width: 80 }}>{lang === 'es' ? 'Requerido' : 'Required'}</th>
                     {carrierCols.map(c => (
                       <th key={c} className="text-center py-1.5 px-2 font-semibold" style={c === 'mapfre' ? { borderTop: '3px solid #E94D35' } : undefined}>
-                        {c === 'mapfre' && <div className="text-[8px] text-[#E94D35] font-bold">{lang === 'es' ? 'RECOMENDADA' : 'RECOMMENDED'}</div>}
+                        {c === 'mapfre' && <div className="text-[8px] text-[#E94D35] font-bold">{lang === 'es' ? 'PRIMA MAS BAJA' : 'LOWEST PREMIUM'}</div>}
                         {c.charAt(0).toUpperCase() + c.slice(1)}
                       </th>
                     ))}
@@ -3184,13 +3197,13 @@ function ComparisonPdfPreview({ lang, carrierCols }: { lang: 'es' | 'en'; carrie
             </table>
           </div>
 
-          {/* Recommendation note */}
+          {/* Insight note */}
           <div className="mb-6 p-3 rounded text-[12px]" style={{ background: 'rgba(233,77,53,0.04)', border: '1px solid rgba(233,77,53,0.15)', fontFamily: 'sans-serif' }}>
-            <div className="font-semibold text-[#E94D35] mb-1">{lang === 'es' ? 'Recomendacion' : 'Recommendation'}: Mapfre Mexico</div>
+            <div className="font-semibold text-[#E94D35] mb-1">Mapfre Mexico</div>
             <div className="text-[#374151]">
               {lang === 'es'
-                ? 'Mejor relacion costo-beneficio con cobertura completa incluyendo Endoso 014 (Vibracion). Sin exclusiones criticas. Deducible Todo Riesgo negociable a 8%.'
-                : 'Best cost-benefit ratio with complete coverage including Endorsement 014 (Vibration). No critical exclusions. All-Risk deductible negotiable to 8%.'}
+                ? 'Prima mas baja (Mex$847,000). Cobertura completa incluyendo Endoso 014 (Vibracion) disponible. Sin exclusiones criticas. Deducible Todo Riesgo negociable a 8%.'
+                : 'Lowest premium (Mex$847,000). Full coverage including Endorsement 014 (Vibration) available. No critical exclusions. All-Risk deductible negotiable to 8%.'}
             </div>
           </div>
 
@@ -3350,16 +3363,16 @@ function SuretyComparisonView() {
         </table>
       </div>
 
-      {/* Recommendation */}
+      {/* Insight */}
       <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="lumif-card" style={{ borderLeft: '4px solid #E94D35', background: 'rgba(233,77,53,0.03)' }}>
         <div className="flex items-center gap-2 mb-2">
           {Icon.sparkle('#E94D35')}
-          <span className="text-[14px] font-semibold text-[#121212]">{t('matrix.recommended', lang)}: Afianzadora Aserta</span>
+          <span className="text-[14px] font-semibold text-[#121212]">{lang === 'es' ? 'Afianzadora Aserta' : 'Afianzadora Aserta'}</span>
         </div>
         <p className="text-[13px] text-[#374151]">
           {lang === 'es'
-            ? 'Cumple al 100% con los montos requeridos. Linea pre-aprobada para el cliente. Emision mas rapida (~12 dias vs ~15 dias). Fianzas Dorama ofrece monto insuficiente en fianza de buena calidad de obra (Mex$45M vs Mex$50M requeridos).'
-            : 'Meets 100% of required amounts. Pre-approved line for this client. Faster issuance (~12 days vs ~15 days). Fianzas Dorama offers insufficient amount on quality guarantee bond (Mex$45M vs Mex$50M required).'}
+            ? 'Cumple al 100% con los montos requeridos. Linea pre-aprobada para este cliente. Emision estimada ~12 dias habiles vs ~15 dias (Dorama). Fianzas Dorama ofrece monto insuficiente en fianza de buena calidad de obra (Mex$45M vs Mex$50M requeridos).'
+            : 'Meets 100% of required amounts. Pre-approved line for this client. Estimated issuance ~12 business days vs ~15 days (Dorama). Fianzas Dorama offers insufficient amount on quality guarantee bond (Mex$45M vs Mex$50M required).'}
         </p>
       </motion.div>
     </div>

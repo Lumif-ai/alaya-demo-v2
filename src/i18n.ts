@@ -106,8 +106,8 @@ export const translations: Record<string, Record<Lang, string>> = {
   // Comparison Matrix
   'matrix.title': { es: 'Matriz Comparativa de Seguros', en: 'Insurance Comparison Matrix' },
   'matrix.suretyTitle': { es: 'Comparativo de Fianzas', en: 'Surety Bond Comparison' },
-  'matrix.bestOption': { es: 'Mejor Opcion', en: 'Best Option' },
-  'matrix.recommended': { es: 'Recomendada', en: 'Recommended' },
+  'matrix.bestOption': { es: 'Prima Mas Baja', en: 'Lowest Premium' },
+  'matrix.recommended': { es: 'Cumple 100%', en: 'Meets 100%' },
   'matrix.coverage': { es: 'Cobertura', en: 'Coverage' },
   'matrix.required': { es: 'Requerido', en: 'Required' },
   'matrix.bond': { es: 'Fianza', en: 'Bond' },
