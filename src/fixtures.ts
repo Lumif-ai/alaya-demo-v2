@@ -1639,7 +1639,7 @@ export interface RecommendationLetter {
 }
 
 export const recommendationLetter: RecommendationLetter = {
-  title: { es: 'Carta de Recomendacion', en: 'Recommendation Letter' },
+  title: { es: 'Resumen Ejecutivo de Cotizaciones', en: 'Quote Analysis Summary' },
   date: '09/04/2026',
   to: 'Ing. Carlos Martinez Hernandez',
   toCompany: 'Constructora del Pacifico S.A. de C.V.',
@@ -1647,12 +1647,12 @@ export const recommendationLetter: RecommendationLetter = {
   fromCompany: 'Alaya — Agente de Seguros y Fianzas',
   // NOTE: Lumif.ai branding should NOT appear on formal client documents
   summary: {
-    es: 'Tras analizar el Contrato Maestro de Servicios del proyecto Autopista Guadalajara-Tepic y solicitar cotizaciones a cuatro aseguradoras y dos afianzadoras, nos permitimos presentar nuestra recomendacion para la colocacion de coberturas.',
-    en: 'After analyzing the Master Services Contract for the Guadalajara-Tepic Highway project and requesting quotes from four insurers and two surety carriers, we present our recommendation for coverage placement.',
+    es: 'Tras analizar el Contrato Maestro de Servicios del proyecto Autopista Guadalajara-Tepic y solicitar cotizaciones a cuatro aseguradoras y dos afianzadoras, presentamos el siguiente resumen comparativo para la colocacion de coberturas.',
+    en: 'After analyzing the Master Services Contract for the Guadalajara-Tepic Highway project and requesting quotes from four insurers and two surety carriers, we present the following comparative summary for coverage placement.',
   },
   recommendation: {
-    insurance: { carrier: 'Mapfre Mexico', premium: 847000, reason: { es: 'Mejor combinacion precio-cobertura. Competitivo en deducibles. Experiencia comprobada en proyectos carreteros.', en: 'Best price-coverage combination. Competitive deductibles. Proven experience in highway projects.' } },
-    surety: { carrier: 'Afianzadora Aserta', premium: 2520680, reason: { es: 'Lider en fianzas de obra publica (Grupo Financiero Banorte). Linea pre-aprobada para Constructora del Pacifico. Emision estimada en 12 dias.', en: 'Leader in public works surety bonds (Grupo Financiero Banorte). Pre-approved line for Constructora del Pacifico. Estimated issuance in 12 days.' } },
+    insurance: { carrier: 'Mapfre Mexico', premium: 847000, reason: { es: 'Prima mas baja de las 4 cotizaciones. Cobertura completa sin exclusiones criticas. Deducibles competitivos. Experiencia comprobada en proyectos carreteros.', en: 'Lowest premium of all 4 quotes. Full coverage with no critical exclusions. Competitive deductibles. Proven experience in highway projects.' } },
+    surety: { carrier: 'Afianzadora Aserta', premium: 2520680, reason: { es: 'Cumple al 100% con montos requeridos. Grupo Financiero Banorte. Linea pre-aprobada para Constructora del Pacifico. Emision estimada en 12 dias habiles.', en: 'Meets 100% of required amounts. Grupo Financiero Banorte. Pre-approved line for Constructora del Pacifico. Estimated issuance in 12 business days.' } },
   },
   totalPremium: 3367680,
   totalCommission: 303294,

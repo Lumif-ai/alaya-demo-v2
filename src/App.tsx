@@ -469,9 +469,9 @@ Adjunto el cuadro comparativo de cotizaciones para el proyecto Autopista Guadala
 
 Se incluyen:
 
-1. Comparativo de Seguros — 4 aseguradoras cotizaron (Mapfre, GNP, Chubb, Zurich). Recomendamos Mapfre por mejor relacion costo-beneficio y cobertura completa incluyendo Endoso 014 (Vibracion).
+1. Comparativo de Seguros — 4 aseguradoras cotizaron (Mapfre, GNP, Chubb, Zurich). Mapfre ofrece la prima mas baja (Mex$847,000) con cobertura completa y Endoso 014 (Vibracion) disponible. Zurich presenta exclusion critica de vibracion.
 
-2. Comparativo de Fianzas — 2 afianzadoras cotizaron (Aserta, Dorama). Recomendamos Aserta por cumplimiento total de montos y linea pre-aprobada.
+2. Comparativo de Fianzas — 2 afianzadoras cotizaron (Aserta, Dorama). Aserta cumple al 100% con los montos requeridos y cuenta con linea pre-aprobada. Dorama ofrece monto insuficiente en fianza de buena calidad.
 
 3. Resumen ejecutivo con desglose de primas y condiciones principales.
 
@@ -487,9 +487,9 @@ Please find attached the quote comparison for the Guadalajara-Tepic Highway proj
 
 Included:
 
-1. Insurance Comparison — 4 carriers quoted (Mapfre, GNP, Chubb, Zurich). We recommend Mapfre for best cost-benefit ratio and complete coverage including Endorsement 014 (Vibration).
+1. Insurance Comparison — 4 carriers quoted (Mapfre, GNP, Chubb, Zurich). Mapfre offers the lowest premium (Mex$847,000) with full coverage and Endorsement 014 (Vibration) available. Zurich has a critical vibration exclusion.
 
-2. Surety Bond Comparison — 2 surety companies quoted (Aserta, Dorama). We recommend Aserta for full compliance with required amounts and pre-approved line.
+2. Surety Bond Comparison — 2 surety companies quoted (Aserta, Dorama). Aserta meets 100% of required amounts with a pre-approved line. Dorama offers insufficient amount on the quality guarantee bond.
 
 3. Executive summary with premium breakdown and key terms.
 
@@ -558,9 +558,9 @@ function GmailClientReply() {
   const { lang } = useLang()
   return (
     <div>
-      {/* Thread view — Carlos's reply to recommendation */}
+      {/* Thread view — Carlos's reply to comparison */}
       <div className="gmail-thread-subject">
-        {lang === 'es' ? 'Re: Carta de Recomendacion y Cuadro Comparativo — Autopista GDL-Tepic' : 'Re: Recommendation Letter & Comparison Matrix — GDL-Tepic Highway'}
+        {lang === 'es' ? 'Re: Cuadro Comparativo de Cotizaciones — Autopista GDL-Tepic' : 'Re: Quote Comparison & Analysis — GDL-Tepic Highway'}
         <span className="text-[12px] text-[#5f6368] font-normal ml-2">{lang === 'es' ? '(2 mensajes)' : '(2 messages)'}</span>
       </div>
 
@@ -577,11 +577,11 @@ function GmailClientReply() {
           <div className="gmail-message-time" style={{ fontSize: 11 }}>10:42 AM</div>
         </div>
         <div style={{ padding: '4px 16px 12px 60px', fontSize: 13, color: '#5f6368' }}>
-          {lang === 'es' ? 'Estimado Ing. Martinez, adjunto nuestra carta de recomendacion y cuadro comparativo para el proyecto Autopista GDL-Tepic...' : 'Dear Eng. Martinez, attached our recommendation letter and comparison matrix for the GDL-Tepic Highway project...'}
+          {lang === 'es' ? 'Estimado Ing. Martinez, adjunto el cuadro comparativo de cotizaciones para el proyecto Autopista GDL-Tepic...' : 'Dear Eng. Martinez, attached the quote comparison for the GDL-Tepic Highway project...'}
           <div className="flex gap-2 mt-2">
             <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-[#dadce0] text-[11px] hover:bg-[#f1f3f4] cursor-pointer">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="4" y="2" width="16" height="20" rx="2" stroke="#dc2626" strokeWidth="1.5"/><text x="12" y="15" textAnchor="middle" fill="#dc2626" fontSize="6" fontWeight="700">PDF</text></svg>
-              {lang === 'es' ? 'Carta_Recomendacion.pdf' : 'Recommendation_Letter.pdf'}
+              {lang === 'es' ? 'Resumen_Ejecutivo.pdf' : 'Executive_Summary.pdf'}
             </div>
             <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-[#dadce0] text-[11px] hover:bg-[#f1f3f4] cursor-pointer">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="4" y="2" width="16" height="20" rx="2" stroke="#dc2626" strokeWidth="1.5"/><text x="12" y="15" textAnchor="middle" fill="#dc2626" fontSize="6" fontWeight="700">PDF</text></svg>
@@ -608,9 +608,9 @@ function GmailClientReply() {
           {lang === 'es'
             ? `Estimada Lic. Gutierrez,
 
-Gracias por el analisis tan detallado. Revisamos la carta de recomendacion y el cuadro comparativo con nuestro equipo.
+Gracias por el analisis tan detallado. Revisamos el cuadro comparativo con nuestro equipo.
 
-Estamos de acuerdo con la recomendacion de Mapfre para los seguros y Afianzadora Aserta para las fianzas.
+Coincidimos en que Mapfre es la mejor opcion para los seguros y Afianzadora Aserta para las fianzas.
 
 Solo un punto: ¿seria posible negociar el deducible de Mapfre en el ramo de equipo de construccion a Mex$200,000? Actualmente esta en Mex$250,000 y nos gustaria reducirlo.
 
@@ -623,9 +623,9 @@ Director de Proyectos
 Constructora del Pacifico S.A. de C.V.`
             : `Dear Lic. Gutierrez,
 
-Thank you for such a detailed analysis. We reviewed the recommendation letter and comparison matrix with our team.
+Thank you for such a detailed analysis. We reviewed the comparison matrix with our team.
 
-We agree with the Mapfre recommendation for insurance and Afianzadora Aserta for surety bonds.
+We agree that Mapfre is the best option for insurance and Afianzadora Aserta for surety bonds.
 
 Just one point: would it be possible to negotiate the Mapfre deductible for construction equipment down to Mex$200,000? It's currently at Mex$250,000 and we'd like to reduce it.
 
@@ -3505,17 +3505,17 @@ function RecommendationLetterView() {
           <p className="text-[13px] text-[#374151] leading-relaxed mb-2">{rec.summary[lang]}</p>
           <p className="text-[11px] text-[#9CA3AF] mb-6">{lang === 'es' ? 'Cifras en pesos mexicanos (MXN).' : 'Amounts in Mexican Pesos (MXN).'}</p>
 
-          {/* Insurance recommendation */}
+          {/* Insurance insight */}
           <div className="mb-4 p-4 rounded-lg" style={{ background: 'rgba(233,77,53,0.04)', border: '1px solid rgba(233,77,53,0.15)' }}>
-            <div className="text-[12px] font-semibold text-[#E94D35] uppercase tracking-wide mb-2">{lang === 'es' ? 'Seguros — Recomendacion' : 'Insurance — Recommendation'}</div>
+            <div className="text-[12px] font-semibold text-[#E94D35] uppercase tracking-wide mb-2">{lang === 'es' ? 'Seguros — Prima Mas Baja' : 'Insurance — Lowest Premium'}</div>
             <div className="text-[15px] font-bold text-[#121212]">{rec.recommendation.insurance.carrier}</div>
             <div className="text-[13px] text-[#6B7280] mt-1">{rec.recommendation.insurance.reason[lang]}</div>
             <div className="text-[16px] font-bold text-[#121212] mt-2">{fmt(rec.recommendation.insurance.premium)} <span className="text-[12px] font-normal text-[#6B7280]">M.N.</span></div>
           </div>
 
-          {/* Surety recommendation */}
+          {/* Surety insight */}
           <div className="mb-6 p-4 rounded-lg" style={{ background: 'rgba(59,130,246,0.04)', border: '1px solid rgba(59,130,246,0.15)' }}>
-            <div className="text-[12px] font-semibold text-[#3B82F6] uppercase tracking-wide mb-2">{lang === 'es' ? 'Fianzas — Recomendacion' : 'Surety — Recommendation'}</div>
+            <div className="text-[12px] font-semibold text-[#3B82F6] uppercase tracking-wide mb-2">{lang === 'es' ? 'Fianzas — Cumple 100%' : 'Surety — Meets 100%'}</div>
             <div className="text-[15px] font-bold text-[#121212]">{rec.recommendation.surety.carrier}</div>
             <div className="text-[13px] text-[#6B7280] mt-1">{rec.recommendation.surety.reason[lang]}</div>
             <div className="text-[16px] font-bold text-[#121212] mt-2">{fmt(rec.recommendation.surety.premium)} <span className="text-[12px] font-normal text-[#6B7280]">M.N.</span></div>
@@ -3577,8 +3577,8 @@ function ClientPortalView({ confirmed }: { confirmed: boolean }) {
 
   return (
     <div className="max-w-[800px] mx-auto">
-      <h2 className="text-[20px] font-semibold text-[#121212] mb-4">{lang === 'es' ? 'Recomendacion de Seguros y Fianzas' : 'Insurance & Surety Recommendation'}</h2>
-      <p className="text-[13px] text-[#6B7280] mb-6">{lang === 'es' ? 'Su agente de seguros, Alaya Seguros, ha preparado la siguiente recomendacion para su proyecto.' : 'Your insurance agent, Alaya Seguros, has prepared the following recommendation for your project.'}</p>
+      <h2 className="text-[20px] font-semibold text-[#121212] mb-4">{lang === 'es' ? 'Resumen Comparativo — Seguros y Fianzas' : 'Comparison Summary — Insurance & Surety'}</h2>
+      <p className="text-[13px] text-[#6B7280] mb-6">{lang === 'es' ? 'Su agente de seguros, Alaya Seguros, ha preparado el siguiente resumen comparativo para su proyecto.' : 'Your insurance agent, Alaya Seguros, has prepared the following comparison summary for your project.'}</p>
 
       <div className="lumif-card mb-4">
         <div className="text-[14px] font-semibold text-[#121212] mb-2">{lang === 'es' ? 'Seguros — Mapfre Mexico' : 'Insurance — Mapfre Mexico'}</div>
@@ -3610,14 +3610,14 @@ function ClientPortalView({ confirmed }: { confirmed: boolean }) {
           </div>
           <div className="p-3 rounded-xl text-[13px] text-[#374151] leading-relaxed" style={{ background: '#F3F4F6', borderTopLeftRadius: 4 }}>
             {lang === 'es'
-              ? 'Pueden negociar el deducible de Mapfre a Mex$200K? Por lo demas, estamos de acuerdo con la recomendacion.'
-              : 'Can you get the Mapfre deductible down to Mex$200K? Otherwise we\'re okay with the recommendation.'}
+              ? 'Pueden negociar el deducible de Mapfre a Mex$200K? Por lo demas, procedamos con Mapfre y Aserta.'
+              : 'Can you get the Mapfre deductible down to Mex$200K? Otherwise let\'s proceed with Mapfre and Aserta.'}
           </div>
         </div>
       </motion.div>
 
       <div className="flex gap-3">
-        <button className="px-6 py-3 rounded-xl text-[14px] font-medium text-white" style={{ background: '#16a34a' }}>{lang === 'es' ? 'Aprobar Recomendacion' : 'Approve Recommendation'}</button>
+        <button className="px-6 py-3 rounded-xl text-[14px] font-medium text-white" style={{ background: '#16a34a' }}>{lang === 'es' ? 'Aprobar y Proceder' : 'Approve & Proceed'}</button>
         <button className="px-6 py-3 rounded-xl text-[14px] font-medium border-2" style={{ color: '#ea580c', borderColor: '#ea580c', background: 'transparent' }}>{lang === 'es' ? 'Solicitar Cambios' : 'Request Changes'}</button>
         <button className="px-6 py-3 rounded-xl text-[14px] font-medium text-[#6B7280] border border-[#E5E7EB]">{lang === 'es' ? 'Agregar Comentario' : 'Add Comment'}</button>
       </div>
@@ -3787,7 +3787,7 @@ function ClientFile() {
               { time: '10/04 10:15', action: { es: 'Cotizacion recibida de Chubb (Mex$1,105,000)', en: 'Quote received from Chubb (Mex$1,105,000)' }, type: 'entrada' },
               { time: '10/04 10:30', action: { es: 'Exclusion de vibracion detectada en Zurich', en: 'Vibration exclusion detected in Zurich' }, type: 'alerta' },
               { time: '10/04 11:00', action: { es: 'Contra-propuesta enviada a Zurich', en: 'Counter-proposal sent to Zurich' }, type: 'salida' },
-              { time: '11/04 10:15', action: { es: 'Recomendacion aprobada por cliente', en: 'Recommendation approved by client' }, type: 'hito' },
+              { time: '11/04 10:15', action: { es: 'Colocacion aprobada por cliente', en: 'Placement approved by client' }, type: 'hito' },
               { time: '12/04 10:15', action: { es: 'Poliza vinculada con Mapfre + Aserta', en: 'Policy bound with Mapfre + Aserta' }, type: 'hito' },
             ].map((log, i) => (
               <div key={i} className="flex items-start gap-2 text-[12px]">
