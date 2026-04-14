@@ -9,13 +9,13 @@
 
 ## Beat 0 — Pipeline Dashboard (8s)
 
-"This is an insurance broker's dashboard. Eight active construction projects at various stages. A new request just came in from Constructora del Pacifico, a 500 million peso highway project that needs both insurance and surety bonds."
+"This is an insurance broker's ops dashboard. Eight active construction projects at various stages. A new request just came in from Constructora del Pacifico, a 500 million peso highway project that needs both insurance and surety bonds."
 
 →
 
 ## Beat 1 — Gmail Inbox (6s)
 
-"The broker starts in Gmail. Carlos Martinez has sent the master services contract, 45 pages of dense legal Spanish with insurance and bond requirements buried throughout."
+"The broker starts in Gmail. The client has sent the master services contract, 45 pages of dense legal Spanish with insurance and bond requirements buried throughout."
 
 →
 
@@ -33,7 +33,7 @@
 
 ## Beat 4 — Contract Analysis: Analyzing (4s)
 
-"The AI reads both documents, the MSA contract and the bond requirements addendum, extracting every insurance and surety requirement."
+"The AI reads both documents, the master services contract and the bond requirements addendum, extracting every insurance and surety requirement."
 
 →
 
@@ -41,7 +41,7 @@
 
 "Six insurance requirements extracted, each mapped to a specific contract clause. Three surety bonds identified from the bond addendum."
 
-"Here's where it gets interesting. This requirement, Contractors All Risk, was buried in clause fourteen three two, in the Special Provisions section, not in the main Insurance section. The system flags it: detected in deep clause, manual review could miss this. On a 500 million peso highway project, missing this coverage would be catastrophic."
+"Here's where it gets interesting. This requirement, Contractors All Risk, was buried in clause fourteen point three point two, in the Special Provisions section, not in the main Insurance section. The system flags it: detected in deep clause, manual review could miss this. On a 500 million peso highway project, missing this coverage would be catastrophic."
 
 →
 
@@ -59,7 +59,7 @@
 
 ## Beat 8 — Portal Auto-Fill (6s)
 
-"For portal carriers, the system fills every form field automatically: project name, insured value, policy period, all extracted from the contract. Supporting documents attach one by one. The broker reviews and submits without typing a single field."
+"For portal carriers, the system fills every form field automatically: project name, insured value, policy period, all extracted from the contract. Supporting documents attach one by one. The broker reviews, confirms, and it's submitted."
 
 →
 
@@ -71,19 +71,19 @@
 
 ## Beat 10 — Gmail Sent View (5s)
 
-"Back in Gmail, four submission emails sent. Combined with the two portal submissions, six carriers contacted in under ten minutes. This traditionally takes two to three business days."
+"Back in Gmail, four submission emails sent. Combined with the two portal submissions, that's six carriers submitted to in under ten minutes. The entire admin burden of going to market, handled."
 
 →
 
 ## Beat 11 — Quote Tracking: Partial (4s)
 
-"Over the next few days, quotes arrive. The system tracks every response: who replied, when, and who needs follow up."
+"As quotes come back from carriers, the system tracks every response: who replied, when, and who still needs follow up."
 
 →
 
-## Beat 12 — Partial Comparison (4s)
+## Beat 12 — Partial Comparison (5s)
 
-"Even before all quotes are in, the broker can start comparing. Three of four insurance quotes received, and the system builds a partial comparison automatically."
+"The broker doesn't have to wait for everyone. Three of four insurance quotes are in, and the system already builds a side by side comparison. You can start evaluating coverage and pricing as soon as the first quotes arrive."
 
 →
 
@@ -97,7 +97,7 @@
 
 "The system compares every quote against every contract requirement. Not just price, but coverage. Every deductible, every limit, every exclusion."
 
-"And here's the critical catch. Zurich's quote has an express exclusion for vibration damage. This is a 167 kilometer highway project with heavy earthmoving, blasting, and pile driving. The contract requires this coverage in clause nine one. A broker comparing four PDF quotes side by side could easily miss this buried on page twelve of Zurich's terms. The system catches it instantly."
+"And here's the critical catch. Zurich's quote has an express exclusion for vibration damage. This is a 167 kilometer highway project with heavy earthmoving, blasting, and pile driving. The contract requires this coverage in clause nine point one. A broker comparing four PDF quotes side by side could easily miss this buried on page twelve of Zurich's terms. The system catches it instantly."
 
 "Mapfre comes in at the lowest premium, 847,000 pesos, with full coverage and no critical exclusions."
 
@@ -105,16 +105,16 @@
 
 ## Beat 15 — Surety Bond Comparison (8s)
 
-"For surety bonds, Afianzadora Aserta meets 100 percent of required amounts with a pre-approved credit line. Dorama falls short on the quality guarantee bond, 45 million versus 50 million required. That five million peso gap would be a contractual violation."
+"For surety bonds, Aserta meets 100 percent of required amounts with a pre-approved credit line. Dorama falls short on the quality guarantee bond, 45 million versus 50 million required. That five million peso gap would be a contractual violation."
 
 →
 
-## Beat 16 — Email to Client (6s)
+## Beat 16 — Email to Client (8s)
 
-"The quote comparison goes to the client, a professional email from Alaya Seguros with the full analysis attached. The client sees the broker's brand, not the AI. Lumify is invisible infrastructure."
+"The quote comparison goes to the client, a professional email from the brokerage with the full analysis attached. The client sees the broker's brand, not the AI. Lumify is invisible infrastructure. And the entire workflow is bilingual, Spanish and English, with a single toggle."
 
 ---
 
-## Closing (10s)
+## Closing (12s)
 
-"From receiving the contract to uncovering what is required from the MSA and delivering the quote comparison to the client, what used to take hours, done in minutes. Six carriers, two channels, three surety bonds, one critical exclusion caught. That's Lumify for insurance brokers."
+"From receiving the contract to uncovering what's required and delivering the quote comparison, what used to take hours, done in minutes. Six carriers, two channels, three surety bonds, one critical exclusion caught. And when this policy renews next year, all the context is already here. That's Lumify for insurance brokers."
