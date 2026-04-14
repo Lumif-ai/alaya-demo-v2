@@ -859,7 +859,7 @@ function PipelineDashboard({ isFinal }: { isFinal: boolean }) {
                   <td className="lumif-table-cell px-4">
                     <span className={`lumif-badge ${stageColor(p.stage)}`}>{p.stageLabel[lang]}</span>
                   </td>
-                  <td className="lumif-table-cell px-4 font-medium">{fmt(p.premium)}</td>
+                  <td className="lumif-table-cell px-4 font-medium">{['placed', 'active', 'renewal'].includes(p.stage) ? fmt(p.premium) : <span className="text-[#9CA3AF]">—</span>}</td>
                   <td className="lumif-table-cell px-4">{p.daysInStage}{lang === 'es' ? 'd' : 'd'}</td>
                   <td className="lumif-table-cell px-2">
                     {p.alert ? Icon.alertTriangle('#dc2626') : <span className="text-[#E5E7EB]">{Icon.chevronRight('#D1D5DB')}</span>}
