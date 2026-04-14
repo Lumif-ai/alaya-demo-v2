@@ -872,7 +872,6 @@ function PipelineDashboard({ isFinal }: { isFinal: boolean }) {
                   <td className="lumif-table-cell px-4">{p.project[lang]}</td>
                   <td className="lumif-table-cell px-4">
                     <span className={`lumif-badge ${stageColor(p.stage)}`}>{p.stageLabel[lang]}</span>
-                    {isCarlos && !isFinal && <span className="lumif-badge lumif-badge-coral ml-1">NEW</span>}
                   </td>
                   <td className="lumif-table-cell px-4 font-medium">{fmt(p.premium)}</td>
                   <td className="lumif-table-cell px-4">{p.daysInStage}{lang === 'es' ? 'd' : 'd'}</td>

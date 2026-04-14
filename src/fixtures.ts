@@ -1561,7 +1561,7 @@ export interface PipelineProject {
 }
 
 export const pipelineProjects: PipelineProject[] = [
-  { id: 1, client: 'Constructora del Pacifico', project: { es: 'Autopista GDL-Tepic', en: 'GDL-Tepic Highway' }, premium: 3367680, stage: 'new', stageLabel: { es: 'Nueva Solicitud', en: 'New Request' }, daysInStage: 0, alert: true },
+  { id: 1, client: 'Constructora del Pacifico', project: { es: 'Autopista GDL-Tepic', en: 'GDL-Tepic Highway' }, premium: 3367680, stage: 'new', stageLabel: { es: 'Nueva', en: 'New' }, daysInStage: 0, alert: true },
   { id: 2, client: 'Grupo ICA', project: { es: 'Metro Linea 4 CDMX', en: 'Metro Line 4 CDMX' }, premium: 8900000, stage: 'quoting', stageLabel: { es: 'Cotizando', en: 'Quoting' }, daysInStage: 3 },
   { id: 3, client: 'CEMEX', project: { es: 'Planta Monterrey Expansion', en: 'Monterrey Plant Expansion' }, premium: 1450000, stage: 'comparison', stageLabel: { es: 'Comparativo Enviado', en: 'Comparison Sent' }, daysInStage: 5 },
   { id: 4, client: 'Constructora Reforma', project: { es: 'Torre Diana CDMX', en: 'Diana Tower CDMX' }, premium: 2800000, stage: 'negotiating', stageLabel: { es: 'En Negociacion', en: 'Negotiating' }, daysInStage: 8 },
