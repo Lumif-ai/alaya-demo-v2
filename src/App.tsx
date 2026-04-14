@@ -198,7 +198,7 @@ function TabBar({ activeTab }: { activeTab: 'gmail' | 'lumif' | 'portal' }) {
       </div>
       <div className={`chrome-tab ${activeTab === 'lumif' ? 'active' : ''}`}>
         <div className="chrome-tab-icon">
-          <svg width="16" height="16" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#E94D35"/><text x="10" y="14" textAnchor="middle" fill="white" fontSize="11" fontWeight="700" fontFamily="Inter">L</text></svg>
+          <img src={`${import.meta.env.BASE_URL}lumifai-icon.png`} alt="Lumif.ai" width="16" height="16" style={{ objectFit: 'contain', borderRadius: 3 }} />
         </div>
         <span className="chrome-tab-title">{t('tab.lumif', lang)}</span>
       </div>
@@ -767,7 +767,7 @@ function LumifHeader() {
   const { lang, setLang } = useLang()
   return (
     <div className="lumif-header">
-      <span className="lumif-header-logo">Lumif.ai</span>
+      <span className="lumif-header-logo flex items-center gap-2"><img src={`${import.meta.env.BASE_URL}lumifai-logo.png`} alt="Lumif.ai" height="24" style={{ height: 24, objectFit: 'contain' }} /></span>
       <div className="ml-4 flex items-center gap-2 px-3 py-1 rounded-lg" style={{ background: 'rgba(233,77,53,0.06)' }}>
         <span className="text-[11px] font-medium text-[#9CA3AF] uppercase tracking-wide">{t('lumif.project', lang)}</span>
         <span className="text-[12px] font-semibold text-[#121212]">Autopista GDL-Tepic</span>
