@@ -182,16 +182,10 @@ export default function App() {
 // ============================================================
 function TabBar({ activeTab }: { activeTab: 'gmail' | 'lumif' | 'portal' }) {
   const { lang } = useLang()
-  // Modern Gmail icon (2020+) - colorful M shape
+  const gmailLogoUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/3840px-Gmail_icon_%282020%29.svg.png'
+  // Modern Gmail icon (2020+)
   const GmailIcon = () => (
-    <svg viewBox="0 0 24 24" width="16" height="16">
-      <rect x="1" y="4" width="22" height="16" rx="2" fill="#fff"/>
-      <path d="M2 5l10 7.5L22 5" fill="none" stroke="#ea4335" strokeWidth="1.8" strokeLinejoin="round"/>
-      <rect x="1" y="4" width="3" height="16" fill="#4285f4"/>
-      <rect x="20" y="4" width="3" height="16" fill="#34a853"/>
-      <path d="M1 18l8-6" fill="none" stroke="#fbbc05" strokeWidth="1.8" strokeLinecap="round"/>
-      <path d="M23 18l-8-6" fill="none" stroke="#fbbc05" strokeWidth="1.8" strokeLinecap="round"/>
-    </svg>
+    <img src={gmailLogoUrl} alt="Gmail" width="16" height="16" style={{ objectFit: 'contain' }} />
   )
   return (
     <div className="tab-bar">
@@ -378,15 +372,7 @@ function GmailTopBar() {
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5f6368" strokeWidth="2" strokeLinecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </div>
         <div className="flex items-center gap-2 ml-1">
-          <svg viewBox="0 0 24 24" width="28" height="22">
-            {/* Modern Gmail multicolor M icon */}
-            <rect x="1" y="4" width="22" height="16" rx="2" fill="#fff" stroke="#e0e0e0" strokeWidth="0.5"/>
-            <path d="M2 5l10 7.5L22 5" fill="none" stroke="#ea4335" strokeWidth="2" strokeLinejoin="round"/>
-            <rect x="1" y="4" width="3" height="16" rx="0" fill="#4285f4"/>
-            <rect x="20" y="4" width="3" height="16" rx="0" fill="#34a853"/>
-            <path d="M1 18l8-6" fill="none" stroke="#fbbc05" strokeWidth="2" strokeLinecap="round"/>
-            <path d="M23 18l-8-6" fill="none" stroke="#fbbc05" strokeWidth="2" strokeLinecap="round"/>
-          </svg>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/3840px-Gmail_icon_%282020%29.svg.png" alt="Gmail" width="28" height="22" style={{ objectFit: 'contain' }} />
           <span className="text-[22px] text-[#5f6368]" style={{ fontFamily: "'Google Sans', sans-serif", fontWeight: 400 }}>Gmail</span>
         </div>
       </div>
