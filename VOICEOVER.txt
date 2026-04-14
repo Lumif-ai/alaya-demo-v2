@@ -1,6 +1,6 @@
 Insurance brokers spend hours reading contracts, filling carrier portals, and comparing quotes in spreadsheets. What if all of that could happen in minutes? This is Lumify.
 
-This is an insurance broker's ops dashboard. Eight active construction projects at various stages. The entire workflow is bilingual, Spanish and English, with a single toggle. A new request just came in from Constructora del Pacifico, a 500 million peso highway project that needs both insurance and surety bonds.
+This is an insurance broker's ops dashboard. Out of 247 active projects, eight need immediate attention. The entire workflow is bilingual, Spanish and English, with a single toggle. A new request just came in from Constructora del Pacifico, a 500 million peso highway project that needs both insurance and surety bonds.
 
 The broker starts in Gmail. The client has sent the master services contract, 45 pages of dense legal Spanish with insurance and bond requirements buried throughout.
 
