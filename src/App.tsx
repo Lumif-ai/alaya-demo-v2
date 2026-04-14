@@ -17,7 +17,7 @@ import {
 import { LangContext, useLang, t, type Lang } from './i18n'
 import { CarrierLogo, CarrierLogoByName } from './carrier-logos'
 
-const MAX_BEAT = 17
+const MAX_BEAT = 16
 
 // ============================================================
 //  SVG ICONS (no emojis, no libraries)
@@ -97,22 +97,22 @@ function stageColor(stage: string): string {
 // Beat to active tab mapping
 function getActiveTab(beat: number): 'gmail' | 'lumif' | 'portal' {
   if (beat === 1 || beat === 2) return 'gmail'
-  if (beat === 9) return 'portal'
-  if (beat === 11) return 'gmail'
-  if (beat === 17) return 'gmail'
+  if (beat === 8) return 'portal'
+  if (beat === 10) return 'gmail'
+  if (beat === 16) return 'gmail'
   return 'lumif'
 }
 
 // Phase navigation for left nav
 type Phase = { label: { es: string; en: string }; beatRange: [number, number] }
 const phases: Phase[] = [
-  { label: { es: 'Perfil de Cliente', en: 'Client Profile' }, beatRange: [3, 4] },
-  { label: { es: 'Analisis de Documentos', en: 'Document Analysis' }, beatRange: [5, 6] },
-  { label: { es: 'Evaluacion de Gaps', en: 'Gap Assessment' }, beatRange: [7, 7] },
-  { label: { es: 'Seleccion y Envio', en: 'Carrier Selection' }, beatRange: [8, 8] },
-  { label: { es: 'Solicitudes', en: 'Submission' }, beatRange: [9, 11] },
-  { label: { es: 'Cotizaciones y Comparacion', en: 'Quotes & Comparison' }, beatRange: [12, 16] },
-  { label: { es: 'Envio al Cliente', en: 'Send to Client' }, beatRange: [17, 17] },
+  { label: { es: 'Perfil de Cliente', en: 'Client Profile' }, beatRange: [3, 3] },
+  { label: { es: 'Analisis de Documentos', en: 'Document Analysis' }, beatRange: [4, 5] },
+  { label: { es: 'Evaluacion de Gaps', en: 'Gap Assessment' }, beatRange: [6, 6] },
+  { label: { es: 'Seleccion y Envio', en: 'Carrier Selection' }, beatRange: [7, 7] },
+  { label: { es: 'Solicitudes', en: 'Submission' }, beatRange: [8, 10] },
+  { label: { es: 'Cotizaciones y Comparacion', en: 'Quotes & Comparison' }, beatRange: [11, 15] },
+  { label: { es: 'Envio al Cliente', en: 'Send to Client' }, beatRange: [16, 16] },
 ]
 
 function getPhaseIndex(beat: number): number {
@@ -278,7 +278,7 @@ function LumifNav({ beat, setBeat }: { beat: number; setBeat: (b: number) => voi
 function GmailView({ beat }: { beat: number }) {
   const { lang } = useLang()
   const showThread = beat === 2
-  const showSentEmails = beat === 11 || beat === 17
+  const showSentEmails = beat === 10 || beat === 16
   const showClientReply = false
   return (
     <div className="flex flex-col h-full gmail-body-font" style={{ background: '#f6f8fc' }}>
@@ -317,7 +317,7 @@ function GmailView({ beat }: { beat: number }) {
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5f6368" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <span style={{ fontWeight: 400 }}>{t('gmail.snoozed', lang)}</span>
           </div>
-          <div className={`gmail-nav-item ${showSentEmails ? 'active' : ''}`}>{Icon.send(showSentEmails ? '#202124' : '#5f6368')}<span style={{ fontWeight: showSentEmails ? 700 : 400 }}>{t('gmail.sent', lang)}</span>{showSentEmails && <span className="gmail-nav-count">{beat === 17 ? 5 : 4}</span>}</div>
+          <div className={`gmail-nav-item ${showSentEmails ? 'active' : ''}`}>{Icon.send(showSentEmails ? '#202124' : '#5f6368')}<span style={{ fontWeight: showSentEmails ? 700 : 400 }}>{t('gmail.sent', lang)}</span>{showSentEmails && <span className="gmail-nav-count">{beat === 16 ? 5 : 4}</span>}</div>
           <div className="gmail-nav-item">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5f6368" strokeWidth="2" strokeLinecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
             <span style={{ fontWeight: 400 }}>{t('gmail.drafts', lang)}</span>
@@ -408,8 +408,8 @@ function GmailTopBar() {
 // ============================================================
 function GmailSentEmails({ beat }: { beat: number }) {
   const { lang } = useLang()
-  // On beat 17, show the comparison sent to Carlos at the top
-  const comparisonEmail = beat === 17 ? [{
+  // On beat 16, show the comparison sent to Carlos at the top
+  const comparisonEmail = beat === 16 ? [{
     toName: 'Carlos Martinez (Constructora del Pacifico)',
     subject: lang === 'es' ? 'Comparativo de Cotizaciones — Autopista GDL-Tepic' : 'Quote Comparison — GDL-Tepic Highway',
     time: lang === 'es' ? 'Hace 1 min' : '1 min ago',
@@ -434,8 +434,8 @@ function GmailSentEmails({ beat }: { beat: number }) {
   ]
   const allEmails = [...comparisonEmail, ...newSentEmails, ...priorSentEmails]
 
-  // On beat 17, show the expanded email thread for comparison sent to client
-  if (beat === 17) {
+  // On beat 16, show the expanded email thread for comparison sent to client
+  if (beat === 16) {
     const comparisonAttachments = [
       { name: 'Comparativo_Seguros_GDL_Tepic.pdf', size: '1.2 MB' },
       { name: 'Comparativo_Fianzas_GDL_Tepic.pdf', size: '0.8 MB' },
@@ -762,16 +762,15 @@ function LumifView({ beat, setBeat }: { beat: number; setBeat: (b: number) => vo
         <div className="flex-1 overflow-y-auto p-6">
           {beat === 0 && <PipelineDashboard isFinal={false} />}
           {beat === 3 && <ClientProfileView />}
-          {beat === 4 && <DocumentUploadView />}
-          {(beat >= 5 && beat <= 6) && <ContractAnalysis beat={beat} />}
-          {beat === 7 && <GapAnalysisSimplified />}
-          {beat === 8 && <CarrierSelectionAndRouting />}
-          {beat === 10 && <EmailApproval onApprove={() => setBeat(11)} />}
-          {beat === 12 && <QuoteGrid beat={beat} partial={true} />}
-          {beat === 13 && <PartialComparisonView />}
-          {beat === 14 && <QuoteGrid beat={beat} partial={false} />}
-          {beat === 15 && <ComparisonMatrixView expandedGroupIndex={2} beat={beat} />}
-          {beat === 16 && <SuretyComparisonView />}
+          {(beat >= 4 && beat <= 5) && <ContractAnalysis beat={beat} />}
+          {beat === 6 && <GapAnalysisSimplified />}
+          {beat === 7 && <CarrierSelectionAndRouting />}
+          {beat === 9 && <EmailApproval onApprove={() => setBeat(10)} />}
+          {beat === 11 && <QuoteGrid beat={beat} partial={true} />}
+          {beat === 12 && <PartialComparisonView />}
+          {beat === 13 && <QuoteGrid beat={beat} partial={false} />}
+          {beat === 14 && <ComparisonMatrixView expandedGroupIndex={2} beat={beat} />}
+          {beat === 15 && <SuretyComparisonView />}
         </div>
       </div>
     </div>
@@ -1148,176 +1147,12 @@ function ClientProfileView() {
 }
 
 // ============================================================
-//  BEAT 4 — DOCUMENT UPLOAD
-// ============================================================
-function DocumentUploadView() {
-  const { lang } = useLang()
-  const [uploadedFiles, setUploadedFiles] = useState<{ name: string; size: string; status: 'uploading' | 'done' }[]>([])
-  const [showFinder, setShowFinder] = useState(false)
-  const [selectedFiles, setSelectedFiles] = useState<Set<number>>(new Set())
-
-  const finderFiles = [
-    { name: 'Contrato_MSA_GDL_Tepic.pdf', size: '4.2 MB', kind: 'PDF Document', date: 'Apr 8, 2026 at 3:15 PM', icon: 'pdf' as const },
-    { name: 'Bond_Requirements_GDL_Tepic.pdf', size: '1.8 MB', kind: 'PDF Document', date: 'Apr 8, 2026 at 3:15 PM', icon: 'pdf' as const },
-    { name: 'Poliza_RC_Vigente_2025.pdf', size: '1.8 MB', kind: 'PDF Document', date: 'Apr 10, 2026 at 2:14 PM', icon: 'pdf' as const },
-    { name: 'Poliza_Equipo_Construccion_2025.pdf', size: '2.1 MB', kind: 'PDF Document', date: 'Apr 10, 2026 at 1:47 PM', icon: 'pdf' as const },
-    { name: 'Estados_Financieros_CdelP_2025.pdf', size: '3.4 MB', kind: 'PDF Document', date: 'Apr 7, 2026 at 9:30 AM', icon: 'pdf' as const },
-    { name: 'Inventario_Equipo_2026.xlsx', size: '0.8 MB', kind: 'Excel Spreadsheet', date: 'Apr 5, 2026 at 4:00 PM', icon: 'xlsx' as const },
-  ]
-
-  const fileIconColor: Record<string, string> = { pdf: '#EA4335', docx: '#4285F4', xlsx: '#34A853' }
-  const fileIconLabel: Record<string, string> = { pdf: 'PDF', docx: 'W', xlsx: 'X' }
-
-  const handleOpenFiles = () => {
-    const filesToUpload = Array.from(selectedFiles).map(i => finderFiles[i]).filter(f => !uploadedFiles.some(u => u.name === f.name))
-    if (filesToUpload.length === 0) return
-    setShowFinder(false)
-    setSelectedFiles(new Set())
-    filesToUpload.forEach(file => {
-      setUploadedFiles(prev => [...prev, { name: file.name, size: file.size, status: 'uploading' }])
-      setTimeout(() => {
-        setUploadedFiles(prev => prev.map(f => f.name === file.name ? { ...f, status: 'done' } : f))
-      }, 800 + Math.random() * 800)
-    })
-  }
-
-  const toggleFile = (idx: number) => {
-    if (uploadedFiles.some(f => f.name === finderFiles[idx].name)) return
-    setSelectedFiles(prev => {
-      const s = new Set(prev)
-      if (s.has(idx)) s.delete(idx); else s.add(idx)
-      return s
-    })
-  }
-
-  return (
-    <div>
-      <h2 className="text-[20px] font-semibold text-[#121212] mb-2">{lang === 'es' ? 'Subir Documentos del Proyecto' : 'Upload Project Documents'}</h2>
-      <p className="text-[13px] text-[#6B7280] mb-6">{lang === 'es' ? 'Suba el contrato, requisitos de fianzas, polizas existentes y cualquier documento relevante para iniciar el analisis.' : 'Upload the contract, bond requirements, existing policies and any relevant documents to start the analysis.'}</p>
-
-      {/* Upload area */}
-      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="lumif-card mb-4">
-        <button
-          onClick={() => setShowFinder(true)}
-          className="w-full flex flex-col items-center justify-center gap-3 px-6 py-8 rounded-lg border-2 border-dashed border-[#D1D5DB] hover:border-[#E94D35] hover:bg-[rgba(233,77,53,0.03)] transition-colors cursor-pointer"
-        >
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="1.5" strokeLinecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          <span className="text-[14px] font-medium text-[#6B7280]">{lang === 'es' ? 'Haz clic para seleccionar archivos' : 'Click to select files'}</span>
-          <span className="text-[11px] text-[#9CA3AF]">{lang === 'es' ? 'PDF, DOCX, XLSX — seleccion multiple permitida' : 'PDF, DOCX, XLSX — multiple selection supported'}</span>
-        </button>
-      </motion.div>
-
-      {/* Uploaded files list */}
-      {uploadedFiles.length > 0 && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="lumif-card">
-          <h3 className="text-[14px] font-semibold text-[#121212] mb-3">{lang === 'es' ? 'Documentos Subidos' : 'Uploaded Documents'} ({uploadedFiles.length})</h3>
-          <div className="space-y-2">
-            {uploadedFiles.map((f, i) => (
-              <div key={i} className="flex items-center gap-3 px-3 py-2 rounded-lg" style={{ background: '#FAFAFA' }}>
-                <div style={{ width: 28, height: 28, borderRadius: 4, background: '#EA4335', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <span style={{ color: 'white', fontSize: 8, fontWeight: 700 }}>PDF</span>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="text-[13px] font-medium text-[#121212] truncate">{f.name}</div>
-                  <div className="text-[11px] text-[#9CA3AF]">{f.size}</div>
-                </div>
-                {f.status === 'uploading' ? (
-                  <div className="w-4 h-4 rounded-full border-2 border-[#E94D35] border-t-transparent animate-spin" />
-                ) : (
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-                )}
-              </div>
-            ))}
-          </div>
-        </motion.div>
-      )}
-
-      {/* macOS Finder dialog */}
-      <AnimatePresence>
-        {showFinder && (
-          <motion.div
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="fixed inset-0 flex items-center justify-center z-[9999]"
-            style={{ background: 'rgba(0,0,0,0.3)' }}
-            onClick={() => { setShowFinder(false); setSelectedFiles(new Set()) }}
-          >
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
-              onClick={e => e.stopPropagation()}
-              className="bg-[#ECECEC] rounded-xl shadow-2xl overflow-hidden"
-              style={{ width: 680, border: '1px solid rgba(0,0,0,0.15)', fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif' }}
-            >
-              <div className="flex items-center gap-2 px-4 py-2.5" style={{ background: 'linear-gradient(180deg, #E8E8E8 0%, #D8D8D8 100%)', borderBottom: '1px solid #B8B8B8' }}>
-                <div className="flex gap-2">
-                  <div className="w-3 h-3 rounded-full cursor-pointer" style={{ background: '#FF5F57' }} onClick={() => { setShowFinder(false); setSelectedFiles(new Set()) }} />
-                  <div className="w-3 h-3 rounded-full" style={{ background: '#FEBC2E' }} />
-                  <div className="w-3 h-3 rounded-full" style={{ background: '#28C840' }} />
-                </div>
-                <div className="flex-1 text-center text-[13px] font-medium text-[#4A4A4A]">
-                  {lang === 'es' ? 'Seleccionar Documentos' : 'Select Documents'}
-                </div>
-              </div>
-              <div className="flex" style={{ height: 340 }}>
-                <div className="flex-1 bg-white overflow-y-auto">
-                  <div className="flex text-[10px] font-semibold text-[#888] px-3 py-1.5" style={{ borderBottom: '1px solid #E0E0E0', background: '#F6F6F6' }}>
-                    <div className="flex-[3]">{lang === 'es' ? 'Nombre' : 'Name'}</div>
-                    <div className="w-16 text-right">{lang === 'es' ? 'Tamaño' : 'Size'}</div>
-                    <div className="w-20 text-right">{lang === 'es' ? 'Tipo' : 'Kind'}</div>
-                  </div>
-                  {finderFiles.map((file, i) => {
-                    const alreadyUploaded = uploadedFiles.some(f => f.name === file.name)
-                    const isSelected = selectedFiles.has(i)
-                    return (
-                      <div
-                        key={i}
-                        onClick={() => toggleFile(i)}
-                        onDoubleClick={() => !alreadyUploaded && (() => { setSelectedFiles(new Set([i])); handleOpenFiles() })()}
-                        className={`flex items-center px-3 py-1.5 cursor-pointer text-[12px] ${isSelected ? 'bg-[#007AFF] text-white' : alreadyUploaded ? 'text-[#999]' : 'text-[#333] hover:bg-[#F0F0F0]'}`}
-                      >
-                        <div className="flex items-center gap-2 flex-[3] min-w-0">
-                          <div style={{ width: 18, height: 18, borderRadius: 3, background: fileIconColor[file.icon] || '#5f6368', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                            <span style={{ color: 'white', fontSize: 7, fontWeight: 700 }}>{fileIconLabel[file.icon] || ''}</span>
-                          </div>
-                          <span className="truncate">{file.name}</span>
-                          {alreadyUploaded && <span className="text-[9px] ml-1 opacity-60">✓</span>}
-                        </div>
-                        <div className="w-16 text-right opacity-70">{file.size}</div>
-                        <div className="w-20 text-right opacity-70 truncate">{file.kind}</div>
-                      </div>
-                    )
-                  })}
-                </div>
-              </div>
-              <div className="flex items-center justify-between px-4 py-2.5" style={{ background: '#ECECEC', borderTop: '1px solid #C8C8C8' }}>
-                <span className="text-[11px] text-[#888]">{selectedFiles.size > 0 ? `${selectedFiles.size} ${lang === 'es' ? 'seleccionados' : 'selected'}` : ''}</span>
-                <div className="flex items-center gap-2">
-                  <button onClick={() => { setShowFinder(false); setSelectedFiles(new Set()) }} className="px-3 py-1 rounded text-[12px] text-[#333] border border-[#C8C8C8]" style={{ background: 'linear-gradient(180deg, #FAFAFA 0%, #E8E8E8 100%)' }}>
-                    Cancel
-                  </button>
-                  <button
-                    onClick={handleOpenFiles}
-                    className="px-3 py-1 rounded text-[12px] text-white font-medium"
-                    style={{ background: selectedFiles.size > 0 ? '#007AFF' : '#A0C4FF', cursor: selectedFiles.size > 0 ? 'pointer' : 'default' }}
-                  >
-                    {lang === 'es' ? 'Abrir' : 'Open'} {selectedFiles.size > 1 ? `(${selectedFiles.size})` : ''}
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  )
-}
-
-// ============================================================
-//  DOCUMENT ANALYSIS (beats 5-6)
+//  DOCUMENT ANALYSIS (beats 4-5)
 // ============================================================
 function ContractAnalysis({ beat }: { beat: number }) {
   const { lang } = useLang()
-  const showInsurance = beat >= 6
-  const showSurety = beat >= 6
+  const showInsurance = beat >= 5
+  const showSurety = beat >= 5
   const contractScrollRef = useRef<HTMLDivElement>(null)
   const [docTab, setDocTab] = useState<'msa' | 'bond'>('msa')
 
@@ -1422,11 +1257,25 @@ function ContractAnalysis({ beat }: { beat: number }) {
 
         {/* RIGHT: Extracted requirements */}
         <div className="w-[420px] flex-shrink-0 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 220px)' }}>
-          {beat === 5 && (
-            <div className="flex flex-col items-center justify-center h-64 gap-4">
-              <div className="w-full h-2 rounded-full overflow-hidden shimmer-bar" style={{ maxWidth: 280 }} />
-              <span className="text-[14px] text-[#6B7280]">{lang === 'es' ? 'Analizando contrato MSA y documento de fianzas...' : 'Analyzing MSA contract and surety bond document...'}</span>
-              <span className="text-[12px] text-[#9CA3AF]">{t('analyzing.sub', lang)}</span>
+          {beat === 4 && (
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col items-center justify-center h-48 gap-4">
+                <div className="w-full h-2 rounded-full overflow-hidden shimmer-bar" style={{ maxWidth: 280 }} />
+                <span className="text-[14px] text-[#6B7280]">{lang === 'es' ? 'Analizando contrato MSA y documento de fianzas...' : 'Analyzing MSA contract and surety bond document...'}</span>
+                <span className="text-[12px] text-[#9CA3AF]">{t('analyzing.sub', lang)}</span>
+              </div>
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
+                className="lumif-card" style={{ border: '1px dashed #D1D5DB' }}>
+                <h4 className="text-[13px] font-semibold text-[#121212] mb-2 flex items-center gap-2">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B7280" strokeWidth="2" strokeLinecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  {lang === 'es' ? 'Subir Documentos Adicionales' : 'Upload Additional Documents'}
+                </h4>
+                <p className="text-[12px] text-[#6B7280] mb-3">{lang === 'es' ? 'Puede agregar contratos, polizas existentes u otros documentos para un analisis mas completo.' : 'You can add contracts, existing policies or other documents for a more complete analysis.'}</p>
+                <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg border-2 border-dashed border-[#D1D5DB] hover:border-[#E94D35] hover:bg-[rgba(233,77,53,0.03)] transition-colors cursor-pointer">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2" strokeLinecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <span className="text-[12px] font-medium text-[#9CA3AF]">{lang === 'es' ? 'Arrastra archivos o haz clic para seleccionar' : 'Drag files or click to browse'}</span>
+                </div>
+              </motion.div>
             </div>
           )}
 
@@ -1490,7 +1339,7 @@ function ContractAnalysis({ beat }: { beat: number }) {
                   <div className="text-[12px] text-[#E94D35] mb-1 hover:underline">{t('gaps.clause', lang)} {req.clause} · {t('req.limit', lang)}: {req.limitText[lang]}</div>
                   <div className="text-[12px] text-[#6B7280] mb-1">{t('req.deductible', lang)}: {req.deductible[lang]}</div>
                   <p className="text-[12px] text-[#374151] leading-relaxed">{req.description[lang]}</p>
-                  {req.clause === '14.3.2' && beat >= 6 && (
+                  {req.clause === '14.3.2' && beat >= 5 && (
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-2 p-2 rounded-lg" style={{ background: 'rgba(233,77,53,0.08)', border: '1px solid rgba(233,77,53,0.2)' }}>
                       <div className="flex items-center gap-2 mb-1">
                         {Icon.sparkle('#E94D35')}
