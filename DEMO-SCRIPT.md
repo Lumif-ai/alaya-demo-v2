@@ -1,290 +1,291 @@
-# Alaya Demo Script — Lumif.ai for Insurance Brokers
+# Alaya Demo — Presenter Script
 
-**Demo:** Quote Comparison & Placement for Mexican Insurance Broker
-**Persona:** Lic. Maria Elena Gutierrez — Insurance & Surety Agent at Alaya
-**Client:** Constructora del Pacifico S.A. de C.V.
-**Project:** Autopista Guadalajara-Tepic (167 km highway, Mex$50M contract)
-**URL:** http://localhost:4201/
-**Language toggle:** Top-right corner (ES/EN)
+**Audience:** Insurance brokerage leadership (CEOs, COOs, VPs of Operations)
+**Duration:** 12–15 minutes
+**Demo URL:** https://lumif-ai.github.io/alaya-demo-v2/
+**Password:** lumifai2026
+**Navigation:** Arrow keys (→ to advance, ← to go back)
+**Language:** Starts in Spanish (toggle EN/ES top-right)
 
 ---
 
-## Pre-Demo Setup
+## Opening (30 seconds — before touching the demo)
 
-- Open http://localhost:4201/ in Chrome
-- Start in Spanish (default), toggle to English if audience prefers
-- Demo starts at Beat 0 (Pipeline Dashboard) — click "Next" or use keyboard arrows
+> "I want to show you something. What you're about to see is not a slide deck — it's a working product. It follows a real workflow: a broker in Mexico receives a construction contract, analyzes it, goes to market with six carriers, compares quotes, and places the policy. End to end. The entire thing takes under an hour."
+
+> "The broker we're following is Maria Elena Gutierrez at Alaya Seguros. Her client just won a highway construction contract worth 500 million pesos and needs both insurance and surety bonds — six different coverage types across six carriers."
+
+> "Let's go."
 
 ---
 
 ## Beat 0 — Pipeline Dashboard
 
-**What's on screen:** Alaya's active project pipeline — multiple construction clients at different stages.
+**On screen:** Broker's ops dashboard — 8 active clients at various stages.
 
-**Script:**
-> "This is the Alaya brokerage dashboard powered by Lumif.ai. Maria Elena manages insurance and surety bonds for construction companies across Mexico. She has multiple active projects — let's look at the one that just came in."
+> "This is Maria Elena's dashboard. Eight active projects, each at a different stage — quoting, negotiating, policy issued, renewals coming up. This is her book of business at a glance."
 
-**Click:** Next →
+> "Notice the top row — Constructora del Pacifico, GDL-Tepic Highway. It just came in. Three million pesos in premium. Let's see how she handles it."
+
+**→ Next**
 
 ---
 
 ## Beat 1 — Gmail Inbox
 
-**What's on screen:** Maria Elena's Gmail inbox. Top email (highlighted) from Carlos Martinez at Constructora del Pacifico with attachment.
+**On screen:** Maria Elena's Gmail inbox with highlighted email from Carlos Martinez.
 
-**Script:**
-> "Maria Elena starts her day in Gmail. Carlos Martinez, her client, has sent over a master services contract for a new highway project. He needs insurance AND surety bonds — liability, equipment, all-risk construction, and performance bonds. Notice the other emails — renewals, claims, regulatory updates — this is a real broker's inbox."
+> "Maria Elena starts her day where every broker starts — in email. Carlos Martinez, her client at Constructora del Pacifico, has sent the master services contract for a new 167-kilometer highway project. He needs the works — general liability, construction equipment, employer's liability, all-risk, AND three surety bonds."
 
-**Click:** Next → (opens the email thread)
+> "Look at the rest of the inbox — renewals, carrier communications, CNSF regulatory updates. This is what a real broker's day looks like."
+
+**→ Next**
 
 ---
 
-## Beat 2 — Email Thread + Analyze
+## Beat 2 — Email Thread
 
-**What's on screen:** Full email from Carlos with contract attached. "Analyze with Lumif.ai" button visible.
+**On screen:** Full email from Carlos with PDF attachment. "Analyze with Lumif.ai" button.
 
-**Script:**
-> "The email includes the full MSA contract as a PDF attachment. Instead of downloading and manually reading 45 pages, Maria Elena clicks 'Analyze with Lumif.ai' — the contract goes directly into the platform."
+> "Carlos attached the full MSA contract — 45 pages of dense legal Spanish. Normally Maria Elena would download this, print it, and spend half a day reading through it, highlighting insurance clauses with a marker."
 
-**Click:** Next →
+> "Instead, she clicks one button: 'Analyze with Lumif.ai'. The contract goes directly into the platform."
+
+**→ Next**
 
 ---
 
 ## Beat 3 — Client Profile
 
-**What's on screen:** Client profile pulled from Alaya's existing records — company info, years in operation, revenue, safety certifications.
+**On screen:** Client profile — company info, financial data, risk metrics, existing policies. Upload button visible in Existing Policies section.
 
-**Script:**
-> "Lumif.ai already knows this client. It pulls up Constructora del Pacifico's profile — 15 years in operation, annual revenue of Mex$280M, ISO 9001 certified, strong safety program. This context matters because it influences carrier selection and pricing later."
+> "The system already knows this client. Constructora del Pacifico — 15 years in business, 280 million pesos in annual revenue, ISO 9001 certified, low claims history. This context isn't just for display — it drives carrier selection and pricing downstream."
 
-**Click:** Next →
+> "Maria Elena can also upload additional documents right here — existing policies, financial statements, anything the underwriters will need."
 
----
+**(Optional during recording:** Click "Upload File" to show the multi-select Finder dialog, select 2-3 files, click Open to show the upload flow.)
 
-## Beat 4–6 — Contract Analysis (3 beats)
-
-**What's on screen:** Contract document viewer with extracted insurance and surety requirements highlighted. Tabbed view: Insurance Requirements / Surety Bond Requirements.
-
-**Script (Beat 4):**
-> "Now the AI actually reads the contract. It's a 45-page MSA in Spanish legal language. Lumif.ai extracts every insurance and surety requirement — limits, deductibles, clauses. Notice the tabs: 'Insurance Requirements' and 'Surety Bond Requirements'. This is a construction project, so BOTH are required."
-
-**Key callout (Beat 5):**
-> "Watch this — 'AI Critical Finding: Detected in deep clause'. The contract has a vibration damage requirement buried in clause 9.1 that manual review would likely miss. On a 167 km highway project with heavy earthmoving equipment, this is a critical coverage requirement."
-
-**Beat 6:** Page through to show more requirements extracted.
-
-**Click:** Next →
+**→ Next**
 
 ---
 
-## Beat 7 — Coverage Gap Analysis
+## Beat 4 — Contract Analysis (Analyzing)
 
-**What's on screen:** Gap analysis grid comparing contract requirements against existing coverage. Red/yellow/green indicators.
+**On screen:** Split view — contract document on the left, analyzing spinner on the right.
 
-**Script:**
-> "Now Lumif.ai compares what the contract REQUIRES against what Constructora del Pacifico CURRENTLY has. Green means they're covered, red means there's a gap. The surety bonds are entirely new requirements — performance bond and advance payment bond — which the client doesn't have yet. These gaps define exactly what we need to go to market for."
+> "Now the AI reads the contract. Both documents — the MSA and the bond requirements addendum. You can see the actual contract text on the left. The system is extracting every insurance and surety requirement — limits, deductibles, specific clauses."
 
-**Click:** Next →
-
----
-
-## Beat 8 — Risk Profile & Submission Package
-
-**What's on screen:** Tabbed view — Risk Profile tab (company data, loss history, projects) and Submission Package tab (document checklist).
-
-**Script (Risk tab):**
-> "Before we approach carriers, Lumif.ai builds a complete risk profile. Loss history over 3 years — low claims ratio. Previous projects of similar scale. Safety certifications. This is what underwriters want to see."
-
-**Switch to Submission tab:**
-> "And here's the submission package — every document an underwriter needs, automatically compiled. Contract, risk profile, financial statements, equipment inventory, loss history. Some documents are already on file from previous engagements. The broker doesn't have to chase each one manually."
-
-**Click:** Next →
+**→ Next**
 
 ---
 
-## Beat 9 — Carrier Selection
+## Beat 5 — Contract Analysis (Results)
 
-**What's on screen:** Two sections — Insurance Carriers (Mapfre, GNP, Chubb, Zurich with match scores) and Surety Bond Carriers (Afianzadora Aserta, Fianzas Dorama with match scores).
+**On screen:** Contract text with highlighted clauses on left. Extracted requirements on right — 6 insurance requirements, 3 bond requirements. Tabs for MSA Contract and Bond Requirements.
 
-**Script:**
-> "Lumif.ai recommends carriers based on the risk profile. For INSURANCE, four carriers — Mapfre and GNP score highest. For SURETY BONDS, two specialist firms — Afianzadora Aserta at 92% match because they already have a pre-approved line for this client, and Fianzas Dorama at 85%. Each recommendation has a rationale explaining why."
+> "Six insurance requirements extracted from the contract. Each one mapped to a specific clause — General Liability from clause 7.1, Construction Equipment from 7.2, Employer's Liability from 7.3. Click any requirement and the contract scrolls to the exact paragraph."
 
-**Click:** Next →
+**(Click the Bond Requirements tab)**
 
----
+> "Three surety bonds — Performance Bond, Quality Guarantee, and Advance Payment. These are standard for Mexican construction but they're in a separate document. The system reads both."
 
-## Beat 10 — Submission Routing ⭐
+**(Click back to MSA Contract tab, click on the CAR/All-Risk requirement)**
 
-**What's on screen:** Two tables — Insurance Carriers routing rules and Surety Bond Carriers routing rules. Each carrier shows method (Portal/Email) and the rule determining the method.
+> "Now here's the moment that pays for the entire platform. This requirement — Contractors All Risk — was buried in clause 14.3.2, in the Special Provisions section, NOT in the main Insurance section. A broker reading this contract manually could easily miss it. The system flags it: 'Detected in deep clause — manual review could miss this requirement.' On a 500 million peso highway project, missing this coverage is a career-ending mistake."
 
-**Script:**
-> "This is where it gets powerful. Lumif.ai determines HOW to submit to each carrier. Mapfre and GNP have agent portals — submissions go through automated browser integration. Chubb exceeds the portal limit at Mex$50M so it requires email with underwriter review. Zurich has no portal at all."
-
-> "And for the surety carriers — Afianzadora Aserta and Fianzas Dorama — both require email submissions. Surety underwriting is relationship-driven, so Lumif.ai drafts personalized emails with the full submission package attached. Six carriers, two channels, zero manual data entry."
-
-**Click:** Next →
+**→ Next**
 
 ---
 
-## Beat 11 — Portal Submission (Mapfre)
+## Beat 6 — Gap Analysis
 
-**What's on screen:** Mapfre's agent portal with form fields being auto-filled in real time. Documents auto-attaching.
+**On screen:** Coverage gap grid — required vs. current coverage. Green/yellow/red indicators. Shortfall amounts.
 
-**Script:**
-> "For portal-based carriers, Lumif.ai uses browser automation to fill the form. Watch — it's populating 20+ fields from the contract and risk profile. Project name, insured value, construction type, start date — all extracted automatically. Then it attaches the supporting documents one by one. The broker reviews and clicks submit."
+> "Now the system compares what the contract requires against what Constructora del Pacifico already has. Green means covered. Yellow means the limit is too low. Red means no coverage at all."
 
-**Click:** Next →
+> "Look at the gaps — Construction Equipment coverage is at 8 million but the contract requires 120 million. That's a 112 million peso shortfall. And all three surety bonds are completely new — the client has never needed them before."
 
----
+> "These gaps define exactly what Maria Elena needs to go to market for. No guessing, no spreadsheets — the market submission scope is defined automatically."
 
-## Beat 12 — Email Submission Approval
-
-**What's on screen:** Pre-drafted emails for Chubb and Zurich, each with carrier-specific context. Approve buttons.
-
-**Script:**
-> "For email-based carriers, Lumif.ai drafts the submission emails. Each one is personalized — Chubb's email explains why it exceeds portal limits and flags the underwriter review requirement. Zurich's goes to the underwriting desk directly. The broker is always in control — nothing sends without explicit approval."
-
-**Action:** Click **"Approve & Send"** on the Chubb email, then **"Approve & Send"** on the Zurich email. Once both show "Approved ✓", a **"Continue — Emails Sent"** button appears top-right.
-
-> "Two clicks — both emails sent with complete submission packages. The broker reviews the content, approves, and Lumif.ai handles delivery."
-
-**Click:** "Continue — Emails Sent" →
+**→ Next**
 
 ---
 
-## Beat 13 — Gmail Sent View
+## Beat 7 — Carrier Selection & Routing
 
-**What's on screen:** Gmail Sent folder showing the 4 submission emails that were sent.
+**On screen:** Two sections — Insurance carriers (Mapfre, GNP, Chubb, Zurich with match scores) and Surety carriers (Aserta, Dorama). Each shows submission method (Portal/Email) and routing logic.
 
-**Script:**
-> "Back in Gmail — four submission emails sent. Two via portal (auto-submitted), two via email (just approved). All six carriers — insurance and surety — received complete submission packages in under 10 minutes. Traditionally this takes a broker 2-3 days."
+> "Based on the risk profile and the coverage requirements, the system identifies which carriers to approach. Four insurance carriers, two surety specialists. Each one has a match score and a rationale."
 
-**Click:** Next →
+> "But here's what matters operationally — HOW to submit. Mapfre and GNP have agent portals, so submissions go through automated browser integration. Chubb exceeds the portal limit at 50 million pesos, so it requires email with underwriter review. Same for Zurich — complex construction risk, has to go through the underwriting desk."
 
----
+> "For surety bonds, both Aserta and Dorama require email submissions — surety underwriting is relationship-driven, not portal-driven."
 
-## Beat 14 — Quote Tracking
+> "Six carriers, two channels, and the system knows the rules for each one."
 
-**What's on screen:** Timeline showing when each quote was received. Insurance quotes + Surety bond quotes in separate sections.
-
-**Script:**
-> "Over the next few days, quotes come in. Lumif.ai tracks everything — which carriers responded, which need follow-up. We have 4 insurance quotes and 2 surety bond quotes. Six total from six carriers. If a carrier is late, the system sends automatic reminders."
-
-**Click:** Next →
+**→ Next**
 
 ---
 
-## Beat 15–17 — Comparison Matrix (3 beats)
+## Beat 8 — Portal Auto-Fill (Mapfre)
 
-**What's on screen:** Side-by-side comparison tables. Beat 15: Insurance comparison. Beat 16: Surety comparison. Beat 17: Combined view with alerts.
+**On screen:** Mapfre's agent portal with form fields being auto-populated in real time.
 
-**Script (Beat 15):**
-> "Now the real value — Lumif.ai compares all quotes against the contract requirements. Not just price, but COVERAGE. Every deductible, every exclusion, every limit checked against what the contract demands."
+> "For portal carriers, the system fills the forms automatically. Watch — project name, insured value, construction type, policy period — 20-plus fields extracted from the contract and populated in seconds. Then the supporting documents attach one by one."
 
-**Script (Beat 16):**
-> "Same for surety bonds — comparing Aserta and Dorama on bond amounts, premium rates, issuance timelines."
+> "Maria Elena reviews the submission, confirms it's correct, and submits. She didn't type a single field."
 
-**Script (Beat 17 — key moment):**
-> "CRITICAL ALERT — Lumif.ai detected that Zurich's quote has an express EXCLUSION for vibration damage. Remember clause 9.1? The contract requires this coverage explicitly. A 167 km highway with heavy earthmoving machinery — vibration damage is not hypothetical, it's inevitable. A human broker comparing PDFs might miss this buried in page 12 of the quote terms. Lumif.ai catches it automatically."
-
-**Click:** Next →
+**→ Next**
 
 ---
 
-## Beat 18–19 — Negotiation
+## Beat 9 — Email Submission Approval
 
-**What's on screen:** AI-generated counter-proposals for each carrier. Beat 19 shows the sent negotiation email.
+**On screen:** Four pre-drafted emails — Chubb, Zurich, Afianzadora Aserta, Fianzas Dorama. Each with Edit and Send buttons.
 
-**Script (Beat 18):**
-> "Based on the analysis, Lumif.ai generates negotiation counter-proposals. For Zurich — request removal of the vibration exclusion or reject the quote. For others — leverage competitive pricing to negotiate better terms."
+> "For email-based carriers, the system drafts every submission email. Each one is personalized — Chubb's email explains why portal submission wasn't possible and routes to the underwriting desk. The surety emails include financial statements and bond requirements."
 
-**Action:** Click **"Approve & Send"** on each counter-proposal to send the negotiation emails.
+> "Maria Elena can edit any email before sending — she's always in control. Nothing leaves without her approval."
 
-**Script (Beat 19):**
-> "The counter-proposal email to Zurich is sent — specific, professional, referencing the exact clause. This isn't a generic 'can you do better' — it's a targeted negotiation backed by contract analysis."
+**(Click Send on each email — or click Edit on one first to show the editing capability, then Send all four)**
 
-**Click:** Next →
+> "Four clicks — four carrier submissions sent. Complete packages with all documentation attached."
 
----
-
-## Beat 20 — Recommendation Letter
-
-**What's on screen:** Formal recommendation letter from Alaya to Constructora del Pacifico, recommending Mapfre for insurance and Aserta for surety bonds.
-
-**Script:**
-> "With negotiations complete, Lumif.ai generates the formal recommendation letter — on Alaya's letterhead, NOT Lumif.ai's. This is the broker's deliverable to the client. It recommends Mapfre for insurance (Mex$847,000 premium) and Afianzadora Aserta for surety bonds (Mex$2,520,680). Total package with clear rationale."
-
-**Click:** Next →
+**→ Next**
 
 ---
 
-## Beat 21–22 — Client Email Communication
+## Beat 10 — Gmail Sent View
 
-**What's on screen:** Gmail showing the recommendation email sent to Carlos Martinez (Beat 21), then his approval reply (Beat 22).
+**On screen:** Gmail Sent folder — 4 submission emails visible.
 
-**Script (Beat 21):**
-> "The recommendation goes to Carlos Martinez via email — professional, complete, with the comparison matrix attached."
+> "Back in Gmail — four submission emails sent. Combined with the two portal submissions, that's six carriers contacted in under ten minutes. In the traditional workflow, this takes two to three full business days — gathering documents, filling portals manually, writing emails from scratch."
 
-**Script (Beat 22):**
-> "Carlos replies — approved. Proceed with binding."
-
-**Click:** Next →
+**→ Next**
 
 ---
 
-## Beat 23 — Binding Confirmation
+## Beat 11 — Quote Tracking (Partial)
 
-**What's on screen:** Binding summary — selected insurance + surety bonds, total package, commission breakdown, issuance process timeline.
+**On screen:** Quote tracking grid — some carriers responded, some pending. Timeline of when quotes arrived.
 
-**Script:**
-> "Binding confirmation — insurance and surety bonds selected. Total package: approximately Mex$3.4M. The broker's estimated commission: 12% on insurance, 8% on surety bonds. And the issuance timeline — with Lumif.ai, approximately 3 days vs. 10-15+ business days traditionally."
+> "Over the next few days, quotes come in. The system tracks everything — who responded, when, and who still needs a follow-up. Three insurance quotes received so far, still waiting on Zurich."
 
-**Click:** Next →
-
----
-
-## Beat 24 — Client File
-
-**What's on screen:** Complete client file — active policies, active bonds, equipment inventory, communication log.
-
-**Script:**
-> "Everything is now in the client file. Active policies, active surety bonds, equipment inventory cross-referenced, full communication log. Next time Constructora del Pacifico needs a renewal or new project coverage, all context is already here."
-
-**Click:** Next →
+**→ Next**
 
 ---
 
-## Beat 25 — Pipeline Dashboard (Final)
+## Beat 12 — Partial Comparison
 
-**What's on screen:** Same pipeline dashboard, but the Constructora del Pacifico project now shows "Policy Issued" status.
+**On screen:** Comparison matrix with 3 of 4 insurance carriers. Partial comparison banner at top.
 
-**Script:**
-> "Back at the dashboard — the project has moved to 'Policy Issued'. What took 10-15 business days manually was completed in 3 days. The broker handled insurance AND surety bonds across 6 carriers through 2 channels — all from one platform."
+> "Even before all quotes are in, Maria Elena can start comparing. Three of four insurance quotes received — the system builds a partial comparison automatically. She doesn't have to wait."
 
----
-
-## Closing Talking Points
-
-1. **End-to-end:** From email inbox to policy issuance — no switching between systems
-2. **Insurance + Surety:** Both handled natively — critical for construction brokers in Mexico
-3. **AI that catches what humans miss:** Vibration exclusion in clause 9.1 — real money saved
-4. **6 carriers, 2 channels, 10 minutes:** Portal auto-fill + email drafting
-5. **Broker-branded:** The client sees Alaya, not Lumif.ai — the AI is invisible infrastructure
-6. **Bilingual:** Full Spanish/English — toggle live during the demo if needed
-7. **Commission tracking:** Broker sees their commission at every step — this is their business
+**→ Next**
 
 ---
 
-## FAQ / Objection Handling
+## Beat 13 — All Quotes Received
 
-**Q: Does it work with ANY carrier portal?**
-> Yes — browser automation works with any web-based portal. The demo shows Mapfre, but the same approach works for GNP, Qualitas, HDI, etc.
+**On screen:** Complete quote grid — all 4 insurance + 2 surety quotes received.
 
-**Q: What about surety-specific workflows?**
-> Surety bonds have different underwriting processes — Lumif.ai handles the financial documentation requirements (balance sheets, bonding capacity) separately from insurance submissions.
+> "All quotes are in. Four insurance carriers, two surety carriers. Six complete responses."
 
-**Q: Is this real or a mockup?**
-> This is a product demo showing the complete workflow. The AI contract analysis, gap detection, and carrier matching are production capabilities. Portal automation is in development.
+**→ Next**
 
-**Q: How does it handle regulatory requirements (CNSF)?**
-> The system tracks CNSF regulatory changes and flags compliance requirements automatically — notice the regulatory email in the inbox from CNSF.
+---
+
+## Beat 14 — Insurance Comparison Matrix ⭐
+
+**On screen:** Full comparison matrix — Mapfre, GNP, Chubb, Zurich side by side. Coverage, limits, deductibles, exclusions. Red flag on Zurich vibration exclusion. Factual insight card at bottom.
+
+> "This is where the real value shows up. The system doesn't just compare prices — it compares coverage against every contract requirement. Every deductible, every limit, every exclusion checked line by line."
+
+**(Point to the Zurich vibration exclusion row — red highlighted)**
+
+> "And here it is — the critical finding. Zurich's quote has an express EXCLUSION for vibration damage. Remember, this is a 167-kilometer highway project — heavy earthmoving machinery, blasting, pile driving. Vibration damage isn't hypothetical, it's inevitable. The contract specifically requires this coverage in clause 9.1."
+
+> "A broker comparing four PDF quotes side by side could easily miss this exclusion buried on page 12 of Zurich's terms. The system catches it instantly and flags it as a critical contractual risk."
+
+**(Point to the insight card at bottom)**
+
+> "Mapfre has the lowest premium at 847,000 pesos, full coverage, no critical exclusions, and the All-Risk deductible is negotiable. These are facts, not opinions — the system surfaces data so the broker makes the decision."
+
+**→ Next**
+
+---
+
+## Beat 15 — Surety Bond Comparison ⭐
+
+**On screen:** Aserta vs. Dorama comparison — bond amounts, premiums, issuance timelines. Factual insight card.
+
+> "Same rigor for surety bonds. Afianzadora Aserta meets 100 percent of required bond amounts. Faster issuance — 12 business days versus 15 for Dorama. And critically — Dorama's quality guarantee bond is 45 million, but the contract requires 50 million. That's a 5 million peso shortfall that would be a contractual violation."
+
+> "These aren't subjective ratings — the system simply tells you which carrier meets the contract requirements and which doesn't."
+
+**→ Next**
+
+---
+
+## Beat 16 — Email to Client
+
+**On screen:** Gmail showing the comparison email sent to Carlos Martinez with PDF attachments.
+
+> "Maria Elena sends the comparison to her client — a professional email with the comparison matrix and executive summary attached. The client sees Alaya Seguros, not Lumif.ai. The AI is invisible infrastructure — the broker's brand is front and center."
+
+---
+
+## Closing (60 seconds)
+
+**(Stop advancing. Face the audience.)**
+
+> "Let me put some numbers on what you just saw."
+
+> "**Time:** From contract receipt to client presentation — traditionally 10 to 15 business days. With Lumif.ai, under one day."
+
+> "**Accuracy:** The vibration exclusion that was caught automatically? That's not an edge case — it's a real claim scenario. On a project this size, that's potentially tens of millions of pesos in uninsured loss. One catch like that pays for years of software."
+
+> "**Scale:** Six carriers, two submission channels, four different coverage types, three surety bonds — all from one platform. Maria Elena didn't switch between five different systems or manually re-key data into four portals."
+
+> "**Revenue:** The total premium on this one project is 3.4 million pesos. At blended commission rates, that's over 300,000 pesos to the brokerage. When you can handle three of these projects in the time it used to take to do one, the math is straightforward."
+
+> "This is what we built. Not a chatbot. Not a dashboard. An AI that reads contracts the way your best analyst does, goes to market the way your most organized broker does, and catches what even your most experienced people miss."
+
+> "Thank you."
+
+---
+
+## Objection Handling
+
+**"Is this real or a mockup?"**
+> This is a product demo showing the complete workflow. The AI contract analysis, requirement extraction, gap detection, and carrier comparison are production capabilities. Portal automation is in active development with two carrier integrations live.
+
+**"Does it work with any carrier portal?"**
+> Browser automation works with any web-based portal. We currently support Mapfre and GNP, with Chubb and Qualitas in development. Email-based submissions work with every carrier immediately.
+
+**"What about surety-specific workflows?"**
+> Surety bonds are first-class in the platform — separate document analysis, different carrier routing logic, financial documentation requirements handled separately from insurance. This is critical for construction brokers in Latin America where surety and insurance are bundled.
+
+**"Our brokers have 30 years of experience — they don't miss things."**
+> They're excellent at what they do. But they're also reading 400-page contracts at 6 PM on a Friday with three other renewals due. The vibration exclusion wasn't in an obvious place — it was in the Special Provisions section, not the Insurance section. The platform doesn't replace judgment — it makes sure nothing gets to the judgment stage without being seen first.
+
+**"How long to implement?"**
+> The platform connects to your email and your AMS. No carrier integration required on day one — email-based submissions work immediately for every carrier. Portal automations are added over time. Most brokerages are live within 2 weeks.
+
+**"What about data security / client confidentiality?"**
+> All data is encrypted in transit and at rest. Documents are processed in isolated environments. We don't train on your client data. Full SOC 2 compliance roadmap in progress.
+
+**"What does it cost?"**
+> We price based on premium volume — the platform should pay for itself on the first or second placement. Happy to walk through specific economics for your book of business.
+
+---
+
+## Demo Tips
+
+1. **Don't rush.** Let each screen breathe for 2-3 seconds before speaking. The visuals tell half the story.
+2. **The two money moments** are Beat 5 (deep clause detection) and Beat 14 (Zurich vibration exclusion). Build to these — they're the "this is why you need AI" moments.
+3. **Toggle to English** if anyone in the audience doesn't speak Spanish. The live language switch is itself a feature worth showing.
+4. **If asked about the upload flow** during Beat 3, click Upload File and demonstrate the multi-select Finder dialog. Select multiple files and open them — it's a nice interactive moment.
+5. **The Gmail tabs are clickable** but don't navigate between them during the demo — stay on the arrow-key flow to avoid getting lost.
+6. **If you get lost,** the beat counter is visible at the bottom of every screen. Use ← to go back.
+7. **End on the email to client (Beat 16),** not on a feature screen. The audience should see the deliverable — a professional email from the broker to the client. That's the output that matters.
