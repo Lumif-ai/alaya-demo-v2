@@ -26,9 +26,9 @@ Back in Gmail, four submission emails sent. Combined with the two portal submiss
 
 As quotes come back from carriers, the system tracks every response: who replied, when, and who still needs follow up.
 
-Once all quotes are in, Lumify automatically generates the full comparison. But the broker doesn't have to wait. At any point, they can click Compare to generate a side by side comparison with whatever quotes have arrived so far.
+Three of four insurance quotes have arrived. The broker doesn't have to wait for the rest. They can click Compare at any point to generate a side by side comparison with whatever quotes are in so far.
 
-All six quotes are in. Four insurance, two surety. Time to compare.
+Now all six quotes are in, four insurance, two surety, and Lumify automatically generates the full comparison.
 
 The system compares every quote against every contract requirement. Not just price, but coverage. Every deductible, every limit, every exclusion.
 
