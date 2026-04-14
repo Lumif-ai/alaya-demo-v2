@@ -911,17 +911,28 @@ function ExistingPolicyAttachments() {
   ]
   const [uploadedFiles, setUploadedFiles] = useState<{ name: string; size: string; status: 'uploading' | 'done' }[]>([])
   const [showFinder, setShowFinder] = useState(false)
-  const [selectedFile, setSelectedFile] = useState<number | null>(null)
+  const [selectedFiles, setSelectedFiles] = useState<Set<number>>(new Set())
 
-  const handleOpenFile = (idx: number) => {
-    const file = finderFiles[idx]
-    if (uploadedFiles.some(f => f.name === file.name)) return
+  const toggleFileSelection = (idx: number) => {
+    if (uploadedFiles.some(f => f.name === finderFiles[idx].name)) return
+    setSelectedFiles(prev => {
+      const s = new Set(prev)
+      if (s.has(idx)) s.delete(idx); else s.add(idx)
+      return s
+    })
+  }
+
+  const handleOpenFiles = () => {
+    const toUpload = Array.from(selectedFiles).map(i => finderFiles[i]).filter(f => !uploadedFiles.some(u => u.name === f.name))
+    if (toUpload.length === 0) return
     setShowFinder(false)
-    setSelectedFile(null)
-    setUploadedFiles(prev => [...prev, { name: file.name, size: file.size, status: 'uploading' }])
-    setTimeout(() => {
-      setUploadedFiles(prev => prev.map(f => f.name === file.name ? { ...f, status: 'done' } : f))
-    }, 1200)
+    setSelectedFiles(new Set())
+    toUpload.forEach((file, i) => {
+      setUploadedFiles(prev => [...prev, { name: file.name, size: file.size, status: 'uploading' }])
+      setTimeout(() => {
+        setUploadedFiles(prev => prev.map(f => f.name === file.name ? { ...f, status: 'done' } : f))
+      }, 800 + i * 400)
+    })
   }
 
   const fileIconColor: Record<string, string> = { pdf: '#EA4335', docx: '#4285F4', xlsx: '#34A853', html: '#FF9800', folder: '#5f6368' }
@@ -947,7 +958,7 @@ function ExistingPolicyAttachments() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center"
             style={{ background: 'rgba(0,0,0,0.3)', backdropFilter: 'blur(2px)' }}
-            onClick={() => setShowFinder(false)}
+            onClick={() => { setShowFinder(false); setSelectedFiles(new Set()) }}
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -961,7 +972,7 @@ function ExistingPolicyAttachments() {
               {/* Titlebar */}
               <div className="flex items-center px-3 py-2" style={{ background: 'linear-gradient(180deg, #E8E8E8 0%, #D4D4D4 100%)', borderBottom: '1px solid #B8B8B8' }}>
                 <div className="flex items-center gap-1.5">
-                  <div onClick={() => setShowFinder(false)} className="w-3 h-3 rounded-full cursor-pointer" style={{ background: '#FF5F57', border: '1px solid #E0443E' }} />
+                  <div onClick={() => { setShowFinder(false); setSelectedFiles(new Set()) }} className="w-3 h-3 rounded-full cursor-pointer" style={{ background: '#FF5F57', border: '1px solid #E0443E' }} />
                   <div className="w-3 h-3 rounded-full" style={{ background: '#FEBC2E', border: '1px solid #DEA123' }} />
                   <div className="w-3 h-3 rounded-full" style={{ background: '#28C840', border: '1px solid #1AAB29' }} />
                 </div>
@@ -1005,12 +1016,13 @@ function ExistingPolicyAttachments() {
                   <div className="flex-1 overflow-y-auto">
                     {finderFiles.map((file, i) => {
                       const alreadyUploaded = uploadedFiles.some(f => f.name === file.name)
+                      const isSelected = selectedFiles.has(i)
                       return (
                         <div
                           key={i}
-                          onClick={() => setSelectedFile(i)}
-                          onDoubleClick={() => !alreadyUploaded && handleOpenFile(i)}
-                          className={`flex items-center px-3 py-1 cursor-pointer text-[12px] ${selectedFile === i ? 'bg-[#007AFF] text-white' : alreadyUploaded ? 'text-[#999]' : 'text-[#333] hover:bg-[#F0F0F0]'}`}
+                          onClick={() => toggleFileSelection(i)}
+                          onDoubleClick={() => { if (!alreadyUploaded) { setSelectedFiles(new Set([i])); setTimeout(handleOpenFiles, 0) } }}
+                          className={`flex items-center px-3 py-1 cursor-pointer text-[12px] ${isSelected ? 'bg-[#007AFF] text-white' : alreadyUploaded ? 'text-[#999]' : 'text-[#333] hover:bg-[#F0F0F0]'}`}
                         >
                           <div className="flex items-center gap-2 flex-[3] min-w-0">
                             <div style={{ width: 18, height: 18, borderRadius: 3, background: fileIconColor[file.icon], display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -1019,9 +1031,9 @@ function ExistingPolicyAttachments() {
                             <span className="truncate">{file.name}</span>
                             {alreadyUploaded && <span className="text-[9px] opacity-60 ml-1">(uploaded)</span>}
                           </div>
-                          <div className={`flex-1 text-right text-[11px] ${selectedFile === i ? 'text-white/80' : 'text-[#888]'}`}>{file.size}</div>
-                          <div className={`flex-[1.5] text-right text-[11px] ${selectedFile === i ? 'text-white/80' : 'text-[#888]'}`}>{file.kind}</div>
-                          <div className={`flex-[2] text-right text-[11px] ${selectedFile === i ? 'text-white/80' : 'text-[#888]'}`}>{file.date}</div>
+                          <div className={`flex-1 text-right text-[11px] ${isSelected ? 'text-white/80' : 'text-[#888]'}`}>{file.size}</div>
+                          <div className={`flex-[1.5] text-right text-[11px] ${isSelected ? 'text-white/80' : 'text-[#888]'}`}>{file.kind}</div>
+                          <div className={`flex-[2] text-right text-[11px] ${isSelected ? 'text-white/80' : 'text-[#888]'}`}>{file.date}</div>
                         </div>
                       )
                     })}
@@ -1032,15 +1044,16 @@ function ExistingPolicyAttachments() {
                       Macintosh HD {'>'} Users {'>'} sharan {'>'} Downloads
                     </div>
                     <div className="flex items-center gap-2">
-                      <button onClick={() => setShowFinder(false)} className="px-3 py-1 rounded text-[12px] text-[#333] border border-[#C8C8C8]" style={{ background: 'linear-gradient(180deg, #FAFAFA 0%, #E8E8E8 100%)' }}>
+                      <span className="text-[10px] text-[#888] mr-2">{selectedFiles.size > 0 ? `${selectedFiles.size} selected` : ''}</span>
+                      <button onClick={() => { setShowFinder(false); setSelectedFiles(new Set()) }} className="px-3 py-1 rounded text-[12px] text-[#333] border border-[#C8C8C8]" style={{ background: 'linear-gradient(180deg, #FAFAFA 0%, #E8E8E8 100%)' }}>
                         Cancel
                       </button>
                       <button
-                        onClick={() => selectedFile !== null && !uploadedFiles.some(f => f.name === finderFiles[selectedFile].name) && handleOpenFile(selectedFile)}
+                        onClick={handleOpenFiles}
                         className="px-3 py-1 rounded text-[12px] text-white font-medium"
-                        style={{ background: selectedFile !== null ? '#007AFF' : '#A0C4FF', cursor: selectedFile !== null ? 'pointer' : 'default' }}
+                        style={{ background: selectedFiles.size > 0 ? '#007AFF' : '#A0C4FF', cursor: selectedFiles.size > 0 ? 'pointer' : 'default' }}
                       >
-                        Open
+                        Open{selectedFiles.size > 1 ? ` (${selectedFiles.size})` : ''}
                       </button>
                     </div>
                   </div>
